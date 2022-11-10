@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 
-function App() {
+import Header from './components/Header'
+import Counter from './components/Counter';
+
+const App = () =>{
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState('');
+
+  const decreaseCount = () => {
+    clearMessage();
+    setCount(prevCount => {
+      if (prevCount - 1 < 0) {
+        setMessage('Count cannot be less than 0.')
+        return 0
+      }
+      return prevCount -1
+    })
+  }
+
+  const increaseCount = () => {
+    clearMessage();
+    setCount(prevCount => prevCount + 1)
+  }
+
+  const clearMessage = () => {
+    setMessage('');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header title="Counter"/>
+      <Counter count={count} handleDecrease={decreaseCount} handleIncrease={increaseCount} message={message}/>
     </div>
   );
 }
