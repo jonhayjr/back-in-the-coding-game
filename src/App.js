@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './components/Header'
 import Counter from './components/Counter';
+import NameInput from './components/NameInput';
 
 const App = () =>{
   const [count, setCount] = useState(0);
@@ -30,8 +31,9 @@ const App = () =>{
 
   return (
     <div className="container">
-      <Header title="Counter"/>
+      <Header title="Back in the Game"/>
       <Counter count={count} handleDecrease={decreaseCount} handleIncrease={increaseCount} message={message}/>
+      <NameInput/>
     </div>
   );
 }

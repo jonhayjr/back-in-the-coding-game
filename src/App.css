@@ -49,3 +49,46 @@ header {
   color: red;
   font-weight: bold;
 }
+
+.name-section {
+  margin-top: 1rem;
+  text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+  width: 25%;
+}
+
+.name-section > p {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+}
+
+.form-paragraph {
+  margin-bottom: 1em;
+}
+
+.input-group {
+  width: 50%;
+}
+
+.input-group + .input-group {
+  margin-top: 1em;
+}
+
+.btn-submit {
+  margin-top: 1em;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: purple;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+
+.btn-submit + .btn-submit {
+  margin-left: 1em;
+}
+
+.btn-group {
+}
